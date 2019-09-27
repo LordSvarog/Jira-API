@@ -1,18 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-require ("C:/xampp7/htdocs/jiraapi/vendor/autoload.php");
 use Illuminate\Http\Request;
 use JiraRestApi\Group\GroupService;
 use JiraRestApi\Project\ProjectService;
 use JiraRestApi\JiraException;
 use JiraRestApi\Configuration\ArrayConfiguration;
-use JiraRestApi\Issue\IssueService;
-use JiraRestApi\Auth;
 use JiraRestApi\Field\Field;
 use JiraRestApi\Field\FieldService;
 use JiraRestApi\User\UserService;
-
+use App\Http\Controllers;
 class HomeController extends Controller
 {
     /**
@@ -64,16 +61,9 @@ class HomeController extends Controller
 //		}
 
 		$arrProjects =[];
+		$allUsers =[];
 		try {
-			$proj = new ProjectService(new ArrayConfiguration(
-				array(
-					'jiraHost' => 'https://webberry.atlassian.net',
-					// for basic authorization:
-					'jiraUser' => 'dl@webberry.ru',
-					'jiraPassword' => 'LT3Rn5voDqd6C10SPvmXA7B9',
-
-				)
-			));
+			$proj = new ProjectService(Api::Configs());
 
 			$pt = $proj->getAllProjects();
 
@@ -99,6 +89,9 @@ class HomeController extends Controller
 					];
 					$users = $us->findAssignableUsers($paramArray);
 					foreach ($users as $user){
+						$allUsers['allUsers'][$user->key] =[
+							'userName'=>$user->displayName
+						];
 						$arrProjects[$p->key]['users'][$user->key] = [
 							'userName'=>$user->displayName,
 							'avatarUrls'=> (array)$user->avatarUrls
@@ -117,10 +110,9 @@ class HomeController extends Controller
 		}
 
 //		var_dump($arrProjects);
-
-		$arrProjects['count']=1;
         return view('home',[
 			'arrProjects' => $arrProjects,
+			'allUsers' => $allUsers,
 		]);
 
 
@@ -133,4 +125,11 @@ class HomeController extends Controller
 
     }
 
+
+    public static function showProject()
+	{
+
+		return view('project');
+
+	}
 }

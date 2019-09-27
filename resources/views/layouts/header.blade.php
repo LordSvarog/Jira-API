@@ -12,7 +12,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
-<html lang="en">
+<html lang="ru">
 
 <!-- begin::Head -->
 <head>
@@ -65,7 +65,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<link href="{{ asset('assets/plugins/general/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--end:: Vendor Plugins -->
-	<link href="{{ asset('') }}assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--begin:: Vendor Plugins for custom pages -->
 	<link href="{{ asset('') }}assets/plugins/custom/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
