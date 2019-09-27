@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-require ("C:/xampp7/htdocs/jiraapi/vendor/autoload.php");
 use Illuminate\Http\Request;
 use JiraRestApi\Group\GroupService;
 use JiraRestApi\Project\ProjectService;
