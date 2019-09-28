@@ -26,11 +26,11 @@ class JiraApi
 	private $jiraUser = 'dl@webberry.ru';
 	private $jiraPassword = 'LT3Rn5voDqd6C10SPvmXA7B9';
 
-	private static function Instance(){
+	private static function instance(){
 		return new self();
 	}
 
-	public static function Configs(){
+	public static function configs(){
 		$oApi = self::Instance();
 		return new ArrayConfiguration(
 			array(
@@ -41,6 +41,31 @@ class JiraApi
 			)
 		);
 	}
+
+    /**
+     * @return mixed
+     */
+    public function getJiraHost()
+    {
+        return $this->jiraHost;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJiraPassword()
+    {
+        return $this->jiraPassword;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJiraUser()
+    {
+        return $this->jiraUser;
+    }
+
 
 	/**
 	 * @param $key - Уникальный ключ проекта в Jira
@@ -90,10 +115,9 @@ class JiraApi
 			'maxResults' => 50, //max 1000
 			//'actionDescriptorId' => 1,
 		];
+
 		try {
-
 			$users = $us->findAssignableUsers($paramArray);
-
 		} catch (JiraException $e) {
 			$users = false;
 		}

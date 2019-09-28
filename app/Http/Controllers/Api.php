@@ -7,6 +7,8 @@ namespace App\Http\Controllers;
  * Time: 9:50
  */
 use JiraRestApi\Configuration\ArrayConfiguration;
+
+
 class Api{
 	private $jiraHost = 'https://webberry.atlassian.net';
 	private $jiraUser = 'dl@webberry.ru';

@@ -29,36 +29,6 @@ class HomeController extends Controller
      */
     public static function index()
     {
-    	/*
-    	 new ArrayConfiguration(
-			array(
-				'jiraHost' => 'https://webberry.atlassian.net',
-				// for basic authorization:
-				'jiraUser' => 'dl@webberry.ru',
-				'jiraPassword' => 'LT3Rn5voDqd6C10SPvmXA7B9',
-				// to enable session cookie authorization (with basic authorization only)
-				'cookieAuthEnabled' => true,
-				'cookieFile' => storage_path('jira-cookie.txt'),
-				// if you are behind a proxy, add proxy settings
-			)
-		)
-    	 */
-//		try {
-//			$proj = new ProjectService(new ArrayConfiguration(
-//				array(
-//					'jiraHost' => 'https://webberry.atlassian.net',
-//					// for basic authorization:
-//					'jiraUser' => 'dl@webberry.ru',
-//					'jiraPassword' => 'LT3Rn5voDqd6C10SPvmXA7B9',
-//
-//				)
-//			));
-//
-//			$pt = $proj->getAllProjects();
-//			print_r($pt);
-//		} catch (JiraException $e) {
-//			print("Error Occured! " . $e->getMessage());
-//		}
 
 		$arrProjects =[];
 		$allUsers =[];
@@ -109,7 +79,6 @@ class HomeController extends Controller
 			print("Error Occured! " . $e->getMessage());
 		}
 
-//		var_dump($arrProjects);
         return view('home',[
 			'arrProjects' => $arrProjects,
 			'allUsers' => $allUsers,

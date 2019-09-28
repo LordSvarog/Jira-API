@@ -98,11 +98,17 @@ License: You must have a valid license purchased only from themeforest(the above
 	<link href="{{ asset('') }}assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('') }}assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('') }}assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--end::Layout Skins -->
 	<link rel="shortcut icon" href="{{ asset('') }}assets/media/logos/favicon.ico" />
 </head>
+
+
 @yield('content')
+
+
+
 <footer>
 	<script>
 		var KTAppOptions = {
