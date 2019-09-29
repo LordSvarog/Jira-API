@@ -245,6 +245,7 @@
 												<table class="table">
 													<thead>
 													<tr>
+														<th>name</th>
 														<th>Разработик</th>
 														<th>Должность</th>
 														<th>Ставка</th>
@@ -254,6 +255,7 @@
 													@foreach($developers as $key => $developer)
 														@if($developer->accountType == 'atlassian')
 															<tr>
+																<td><?=$developer->name?></td>
 																<td><b><?=$developer->displayName?></b></td>
 																<td>Программист</td>
 																<td>1500 р/ч</td>

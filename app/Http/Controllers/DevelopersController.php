@@ -18,11 +18,16 @@ class DevelopersController extends Controller
     {
         $this->middleware('auth');
     }
+
+
     public static function index()
     {
-
         return view('developers/developers',[
             'developers' => Developers::getAll(),
         ]);
+    }
+
+    public static function issue($user) {
+        dd(Developers::getIssue($user));
     }
 }
