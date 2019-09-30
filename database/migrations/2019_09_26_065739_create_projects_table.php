@@ -15,11 +15,10 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
+			$table->string('key');
 			$table->unique('key');
-			$table->float('paid');
 			$table->string('name');
 			$table->float('rate');
-			$table->integer('lead');
             $table->timestamps();
         });
     }

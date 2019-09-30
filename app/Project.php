@@ -9,134 +9,80 @@ use JiraRestApi\Project\ProjectService;
 use JiraRestApi\JiraException;
 use JiraRestApi\Configuration\ArrayConfiguration;
 use JiraRestApi\User\UserService;
-class project extends Model
+class Project extends Model
 {
 
-	protected $id, $key, $name, $paid, $rate,$users;
-
-	function __construct($data = null)
-	{
-		if(!empty($data)) {
-
-			if (!empty($data['id'])){
-
-				$this->id = $data['id'];
-				$this->key = $data['key'];
-				$this->name = $data['name'];
-				$this->paid = $data['paid'];
-				$this->hours = $data['hours'];
-				$this->rate = $data['rate'];
-				$this->users = $data['users'];
-
-			}else{
-				$this->users_id = $data['users_id'];
-				$this->report_time_id = $data['report_time_id'];
-				$this->rate = $data['rate'];
-			}
+	protected $id, $key, $name, $rate;
 
 
-		}
-
+	private static function apiProject() {
+		return new  ProjectService();
 	}
-
-	public static function getProjectJiraApiByKey($key)
+	private static function apiUser() {
+		return new  UserService();
+	}
+	public static function getByKey($key)
 	{
-
-		$proj = new ProjectService(new ArrayConfiguration(
-			array(
-				'jiraHost' => 'https://webberry.atlassian.net',
-				// for basic authorization:
-				'jiraUser' => 'dl@webberry.ru',
-				'jiraPassword' => 'LT3Rn5voDqd6C10SPvmXA7B9',
-
-			)
-		));
+		$project = self::apiProject()->get($key);
 		$arrProjects=[];
-		$projectInfo = $proj->get($key);
-		try {
-			$us = new UserService();
-
 			$paramArray = [
 				'project' => $key,
 				'startAt' => 0,
 				'maxResults' => 50, //max 1000
 			];
-
-			$users = $us->findAssignableUsers($paramArray);
-			foreach ($users as $user){
-				$arrProjects[$key]['users'][$user->key] = $user;
-				$arrProjects[$key]['project'] = $projectInfo;
-
-
-			}
-
-		} catch (JiraException $e) {
-			print("Error Occured! " . $e->getMessage());
-		}
-
-
-
+			$users = self::apiUser()->findAssignableUsers($paramArray);
+				$arrProjects['users'] = $users;
+				$arrProjects['project'] = $project;
 		return $arrProjects;
 	}
 
-
-
-	public static function getAllProjectJiraApi()
+	public function getParams($agr, $key)
 	{
+		$obj = self::where("key",$agr)->first();
 
-		$arrProjects =[];
-		try {
-			$proj = new ProjectService(new ArrayConfiguration(
-				array(
-					'jiraHost' => 'https://webberry.atlassian.net',
-					// for basic authorization:
-					'jiraUser' => 'dl@webberry.ru',
-					'jiraPassword' => 'LT3Rn5voDqd6C10SPvmXA7B9',
+		if (!empty($obj)){
+			return $obj->attributes[$key];
 
-				)
-			));
-
-			$pt = $proj->getAllProjects();
-
-
-			foreach ($pt as $p){
-				$projectInfo = $proj->get($p->key);
-				//print_r($projectInfo->lead["displayName"]);
-				try {
-					$us = new UserService();
-
-					$paramArray = [
-						//'username' => null,
-						'project' => $p->key,
-						//'issueKey' => 'TEST-1',
-						'startAt' => 0,
-						'maxResults' => 50, //max 1000
-						//'actionDescriptorId' => 1,
-					];
-
-					$users = $us->findAssignableUsers($paramArray);
-					foreach ($users as $user){
-						$arrProjects[$p->key]['users'][$user->key] = $user;
-						$arrProjects[$p->key]['project'] = $projectInfo;
-
-
-					}
-
-				} catch (JiraException $e) {
-					print("Error Occured! " . $e->getMessage());
-				}
-
-			}
-		} catch (JiraException $e) {
-			print("Error Occured! " . $e->getMessage());
+		}else{
+			return null;
 		}
 
 
+	}
 
+	public function getAllInfo(){
+		$arrProjects =[];
+
+		$projects = self::apiProject()->getAllProjects();
+		foreach ($projects as $project){
+			$projectInfo = self::apiProject()->get($project->key);
+			$paramArray = [
+				'project' => $project->key,
+				'startAt' => 0,
+				'maxResults' => 50
+			];
+			$users = self::apiUser()->findAssignableUsers($paramArray);
+			$arrProjects[$project->key] = [
+				'project' => $projectInfo,
+				'users' => $users,
+				'rate' => self::getParams($project->key, 'rate')
+
+			];
+//			$newProject = self::instance();
+//			$newProject->key = '';
+//			$newProject->save();
+			//dd(self::getParams($project->key, 'rate'));
+		}
 		return $arrProjects;
 	}
 
+	public static function convert($agr, $size = '48x48') {
+		$new = (array) $agr;
 
+		return $new[$size];
+	}
 
-
+	public static function instance() {
+		return new Project();
+	}
 }

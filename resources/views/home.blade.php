@@ -60,7 +60,31 @@
                     <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
                         <ul class="kt-menu__nav ">
                             <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--open kt-menu__item--here" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+
+                                <a href="/developers" class="kt-menu__link kt-menu__toggle">
+                                     <span class="kt-menu__link-icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path d="M6.98113892,21.5 L7.61810208,21.5 C7.84357761,21.5 8.04115745,21.3490893 8.10048399,21.1315587 L9.37729932,16.4497595 C9.44617559,16.1972133 9.69816937,16.0405293 9.95512991,16.0904778 C11.3596584,16.3634926 12.3746151,16.5 13,16.5 C13.646503,16.5 15.0010968,16.3541177 17.0637814,16.0623532 L17.0637875,16.0623965 C17.3131816,16.0271199 17.5498754,16.1828763 17.6161485,16.4258779 L18.899516,21.1315587 C18.9588425,21.3490893 19.1564224,21.5 19.3818979,21.5 L20.0384026,21.5 C20.2990829,21.5 20.5160222,21.2997228 20.5368102,21.0398726 L21.1544815,13.3189809 C21.3306498,11.1168774 19.6883048,9.18890717 17.4862013,9.01273889 C17.3800862,9.00424968 17.2736745,9 17.1672204,9 L13,9 C12.0256112,6.96792142 11.1922779,5.63458808 10.5,5 C10.1827335,4.70917234 8.36084967,3.94216891 5.03434861,2.69898968 L5.03438003,2.69890562 C4.87913228,2.64088647 4.7062453,2.71970582 4.64822614,2.87495357 C4.62696245,2.93185098 4.62346541,2.99386164 4.63819725,3.05278899 L4.92939183,4.21785549 C4.97292798,4.39200007 4.919759,4.57611822 4.79008912,4.70024499 C4.13636504,5.32602378 3.70633533,5.75927545 3.5,6 C3.28507393,6.25074708 2.97597493,7.00745907 2.57270301,8.27013596 L2.5727779,8.27015988 C2.52651585,8.4150101 2.54869436,8.57304154 2.6330412,8.69956179 L3.23554277,9.60331416 C3.38359021,9.82538532 3.67995409,9.89202755 3.9088158,9.75471052 L4.75,9.25 C5.15859127,9.00484524 5.68855714,9.13733671 5.9337119,9.54592798 C6.00837879,9.67037279 6.05044776,9.81164184 6.05602542,9.95666096 L6.48150833,21.0192166 C6.49183398,21.2876836 6.71247339,21.5 6.98113892,21.5 Z" fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Разработчики</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--open kt-menu__item--here" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                 <a href="/home" class="kt-menu__link kt-menu__toggle">
+                                     <span class="kt-menu__link-icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <rect fill="#000000" opacity="0.3" x="11.5" y="2" width="2" height="4" rx="1"></rect>
+                                                <rect fill="#000000" opacity="0.3" x="11.5" y="16" width="2" height="5" rx="1"></rect>
+                                                <path d="M15.493,8.044 C15.2143319,7.68933156 14.8501689,7.40750104 14.4005,7.1985 C13.9508311,6.98949895 13.5170021,6.885 13.099,6.885 C12.8836656,6.885 12.6651678,6.90399981 12.4435,6.942 C12.2218322,6.98000019 12.0223342,7.05283279 11.845,7.1605 C11.6676658,7.2681672 11.5188339,7.40749914 11.3985,7.5785 C11.2781661,7.74950085 11.218,7.96799867 11.218,8.234 C11.218,8.46200114 11.2654995,8.65199924 11.3605,8.804 C11.4555005,8.95600076 11.5948324,9.08899943 11.7785,9.203 C11.9621676,9.31700057 12.1806654,9.42149952 12.434,9.5165 C12.6873346,9.61150047 12.9723317,9.70966616 13.289,9.811 C13.7450023,9.96300076 14.2199975,10.1308324 14.714,10.3145 C15.2080025,10.4981676 15.6576646,10.7419985 16.063,11.046 C16.4683354,11.3500015 16.8039987,11.7268311 17.07,12.1765 C17.3360013,12.6261689 17.469,13.1866633 17.469,13.858 C17.469,14.6306705 17.3265014,15.2988305 17.0415,15.8625 C16.7564986,16.4261695 16.3733357,16.8916648 15.892,17.259 C15.4106643,17.6263352 14.8596698,17.8986658 14.239,18.076 C13.6183302,18.2533342 12.97867,18.342 12.32,18.342 C11.3573285,18.342 10.4263378,18.1741683 9.527,17.8385 C8.62766217,17.5028317 7.88033631,17.0246698 7.285,16.404 L9.413,14.238 C9.74233498,14.6433354 10.176164,14.9821653 10.7145,15.2545 C11.252836,15.5268347 11.7879973,15.663 12.32,15.663 C12.5606679,15.663 12.7949989,15.6376669 13.023,15.587 C13.2510011,15.5363331 13.4504991,15.4540006 13.6215,15.34 C13.7925009,15.2259994 13.9286662,15.0740009 14.03,14.884 C14.1313338,14.693999 14.182,14.4660013 14.182,14.2 C14.182,13.9466654 14.1186673,13.7313342 13.992,13.554 C13.8653327,13.3766658 13.6848345,13.2151674 13.4505,13.0695 C13.2161655,12.9238326 12.9248351,12.7908339 12.5765,12.6705 C12.2281649,12.5501661 11.8323355,12.420334 11.389,12.281 C10.9583312,12.141666 10.5371687,11.9770009 10.1255,11.787 C9.71383127,11.596999 9.34650161,11.3531682 9.0235,11.0555 C8.70049838,10.7578318 8.44083431,10.3968355 8.2445,9.9725 C8.04816568,9.54816454 7.95,9.03200304 7.95,8.424 C7.95,7.67666293 8.10199848,7.03700266 8.406,6.505 C8.71000152,5.97299734 9.10899753,5.53600171 9.603,5.194 C10.0970025,4.85199829 10.6543302,4.60183412 11.275,4.4435 C11.8956698,4.28516587 12.5226635,4.206 13.156,4.206 C13.9160038,4.206 14.6918294,4.34533194 15.4835,4.624 C16.2751706,4.90266806 16.9686637,5.31433061 17.564,5.859 L15.493,8.044 Z" fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
                                     <span class="kt-menu__link-text">Проекты</span>
                                 </a>
                             </li>
@@ -227,9 +251,36 @@
                 <!-- end:: Header -->
                 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
                     <!-- begin:: Content -->
+                    <div class="modal fade" id="kt_modal_5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="form-control-label">Recipient:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="form-control-label">Message:</label>
+                                            <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Send message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                         <div class="row">
-                            @foreach($arrProjects as $key => $project)
+                            @foreach($data as $key => $project)
                                 <div class="col-xl-6">
                                             <!--begin:: Portlet-->
                                             <div class="kt-portlet kt-portlet--height-fluid">
@@ -241,57 +292,35 @@
                                                             <div class="kt-widget__label">
                                                                 <div class="kt-widget__media">
                                                                 <span class="kt-media kt-media--lg kt-media--circle">
-                                                                    <img src="{{$project['project']['avatarUrls']}}"
+                                                                    <img
+                                                                            src="{{$project['project']->avatarUrls["48x48"]}}"
                                                                          alt="image">
                                                                 </span>
                                                                 </div>
                                                                 <div class="kt-widget__info kt-margin-t-5">
                                                                     <a href="{{url('/home', $key)}}" class="kt-widget__title">
-                                                                        {{$project['project']['pName']}}
+                                                                        {{$project['project']->name}}
                                                                     </a>
                                                                     <span class="kt-widget__desc">
-                                                                    Creates by {{$project['project']['lead']}}
+                                                                    Creates by {{$project['project']->lead['displayName']}}
                                                                 </span>
                                                                 </div>
                                                             </div>
                                                             <div class="kt-portlet__head-toolbar">
-                                                                <a href="#" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown">
-                                                                    <i class="flaticon-more-1"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right">
-                                                                    <ul class="kt-nav">
-                                                                        <li class="kt-nav__item">
-                                                                            <a href="#" class="kt-nav__link">
-                                                                                <i class="kt-nav__link-icon flaticon2-line-chart"></i>
-                                                                                <span class="kt-nav__link-text">Reports</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="kt-nav__item">
-                                                                            <a href="#" class="kt-nav__link">
-                                                                                <i class="kt-nav__link-icon flaticon2-send"></i>
-                                                                                <span class="kt-nav__link-text">Messages</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="kt-nav__item">
-                                                                            <a href="#" class="kt-nav__link">
-                                                                                <i class="kt-nav__link-icon flaticon2-pie-chart-1"></i>
-                                                                                <span class="kt-nav__link-text">Charts</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="kt-nav__item">
-                                                                            <a href="#" class="kt-nav__link">
-                                                                                <i class="kt-nav__link-icon flaticon2-avatar"></i>
-                                                                                <span class="kt-nav__link-text">Members</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="kt-nav__item">
-                                                                            <a href="#" class="kt-nav__link">
-                                                                                <i class="kt-nav__link-icon flaticon2-settings"></i>
-                                                                                <span class="kt-nav__link-text">Settings</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
+                                                                @if($project['rate'] == null)
+                                                                    <a id="{{$key}}" href="#" class="btn btn-clean
+                                                                    btn-sm
+                                                                    btn-icon
+                                                                     btn-icon-md">
+                                                                        <i class="flaticon2-plus"></i>
+                                                                    </a>
+                                                                @else
+
+                                                                    <a href="#" class="btn btn-clean btn-sm btn-icon btn-icon-md">
+                                                                        <i class="flaticon2-settings"></i>
+                                                                    </a>
+                                                                    <button type="button" class="btn btn-bold btn-label-brand btn-sm" data-toggle="modal" data-target="#kt_modal_5">Launch Modal</button>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <div class="kt-widget__body">
@@ -334,15 +363,28 @@
                                                                     <span class="kt-widget__value"><span>$</span>249,500</span>
                                                                 </div>
                                                                 <div class="kt-widget__details">
-                                                                    <span class="kt-widget__subtitle">Expances</span>
-                                                                    <span class="kt-widget__value"><span>$</span>76,810</span>
+                                                                    <span class="kt-widget__subtitle">Ставка</span>
+                                                                    @if($project['rate'] == null)
+                                                                        <span class="kt-widget__value"><span></span>не
+                                                                            установленна
+                                                                        </span>
+                                                                    @else
+                                                                        <span class="kt-widget__value"><span><i class="fa fa-ruble-sign"></i></span>{{$project['rate']}}</span>
+                                                                    @endif
+
                                                                 </div>
                                                                 <div class="kt-widget__details">
                                                                     <span class="kt-widget__subtitle">Members</span>
                                                                     <div class="kt-media-group">
-                                                                        @foreach((array)$arrProjects[$key]["users"] as  $userP)
-                                                                            <a href="#" class="kt-media kt-media--sm kt-media--circle" data-toggle="kt-tooltip" data-skin="brand" data-placement="top" title="" data-original-title="{{$userP['userName']}}">
-                                                                                <img src="{{$userP['avatarUrls']['48x48']}}"
+                                                                        @foreach($project['users'] as  $user)
+                                                                            <a href="#" class="kt-media kt-media--sm
+                                                                            kt-media--circle"
+                                                                               data-toggle="kt-tooltip"
+                                                                               data-skin="brand" data-placement="top"
+                                                                               title=""
+                                                                               data-original-title="{{$user->displayName}}">
+                                                                                <img
+                                                                                        src="{{ app\Project::convert($user->avatarUrls) }}"
                                                                                      alt="image">
                                                                             </a>
                                                                         @endforeach
@@ -363,8 +405,9 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="kt-widget__section">
-                                                                    <button type="button" href="{{url('/home', $key)}}" class="btn btn-brand btn-sm
-                                                                    btn-upper btn-bold">details</button>
+                                                                    <a  href="{{url('/home', $key)}}"
+                                                                       class="btn btn-brand btn-sm
+                                                                    btn-upper btn-bold">details</a>
 
                                                                 </div>
                                                             </div>
@@ -381,6 +424,7 @@
                         <!--Begin::Section-->
                         </div>
                     </div>
+
 
                     <!-- end:: Content -->
                 </div>
