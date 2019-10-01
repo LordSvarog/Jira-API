@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 8
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<html lang="ru">
+<html lang="en">
 
 <!-- begin::Head -->
 <head>
@@ -21,6 +9,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<title>Metronic | Dashboard</title>
 	<meta name="description" content="Updates and statistics">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!--begin::Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
@@ -64,44 +53,45 @@ License: You must have a valid license purchased only from themeforest(the above
 	<link href="{{ asset('assets/plugins/general/plugins/flaticon2/flaticon.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('assets/plugins/general/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css" />
 
+	<link href="{{ asset('css/modal.css') }}" rel="stylesheet" type="text/css" />
 	<!--end:: Vendor Plugins -->
 	<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--begin:: Vendor Plugins for custom pages -->
-	<link href="{{ asset('') }}assets/plugins/custom/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/@fullcalendar/core/main.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/@fullcalendar/daygrid/main.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/@fullcalendar/list/main.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/@fullcalendar/timegrid/main.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-autofill-bs4/css/autoFill.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-rowgroup-bs4/css/rowGroup.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-rowreorder-bs4/css/rowReorder.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/datatables.net-select-bs4/css/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/jstree/dist/themes/default/style.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/jqvmap/dist/jqvmap.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/plugins/custom/uppy/dist/uppy.min.css" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/@fullcalendar/core/main.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/@fullcalendar/daygrid/main.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/@fullcalendar/list/main.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/@fullcalendar/timegrid/main.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-autofill-bs4/css/autoFill.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-rowgroup-bs4/css/rowGroup.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-rowreorder-bs4/css/rowReorder.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/datatables.net-select-bs4/css/select.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/jstree/dist/themes/default/style.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/jqvmap/dist/jqvmap.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/plugins/custom/uppy/dist/uppy.min.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--end:: Vendor Plugins for custom pages -->
 
 	<!--end::Global Theme Styles -->
 
 	<!--begin::Layout Skins(used by all pages) -->
-	<link href="{{ asset('') }}assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('') }}assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/css/skins/header/base/light.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/css/skins/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/css/skins/brand/dark.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('assets/css/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--end::Layout Skins -->
-	<link rel="shortcut icon" href="{{ asset('') }}assets/media/logos/favicon.ico" />
+	<link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
 </head>
 
 
@@ -274,5 +264,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
 	<!--begin::Page Scripts(used by this page) -->
 	<script src="{{ asset('assets/js/pages/dashboard.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('js/AJAX.js') }}" type="text/javascript"></script>
 </footer>
 </html>

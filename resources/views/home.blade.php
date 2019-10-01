@@ -3,6 +3,7 @@
 @section('content')
     <body class="kt-app__aside--left kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
 
+
     <!-- begin:: Page -->
 
     <!-- begin:: Header Mobile -->
@@ -251,29 +252,27 @@
                 <!-- end:: Header -->
                 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
                     <!-- begin:: Content -->
-                    <div class="modal fade" id="kt_modal_5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal fade" id="kt_modal_5" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" style="display: none; " aria-hidden="true">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
+
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Редатктирование</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <form>
                                         <div class="form-group">
-                                            <label for="recipient-name" class="form-control-label">Recipient:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="form-control-label">Message:</label>
-                                            <textarea class="form-control" id="message-text"></textarea>
+                                            <label for="recipient-name" class="form-control-label">Ставка:</label>
+                                            <input type="text" class="form-control" id="rate-new" >
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Send message</button>
+                                    <button id="rate-sav" type="button" class="btn btn-primary">Send message</button>
                                 </div>
                             </div>
                         </div>
@@ -281,145 +280,158 @@
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                         <div class="row">
                             @foreach($data as $key => $project)
-                                <div class="col-xl-6">
-                                            <!--begin:: Portlet-->
-                                            <div class="kt-portlet kt-portlet--height-fluid">
-                                                <div class="kt-portlet__body kt-portlet__body--fit">
+                                <div class="col-xl-6" id="{{$project['project']->name}}">
+                                    <!--begin:: Portlet-->
+                                    <div class="kt-portlet kt-portlet--height-fluid">
+                                        <div class="kt-portlet__body kt-portlet__body--fit">
 
-                                                    <!--begin::Widget -->
-                                                    <div class="kt-widget kt-widget--project-1">
-                                                        <div class="kt-widget__head">
-                                                            <div class="kt-widget__label">
-                                                                <div class="kt-widget__media">
-                                                                <span class="kt-media kt-media--lg kt-media--circle">
-                                                                    <img
-                                                                            src="{{$project['project']->avatarUrls["48x48"]}}"
-                                                                         alt="image">
-                                                                </span>
-                                                                </div>
-                                                                <div class="kt-widget__info kt-margin-t-5">
-                                                                    <a href="{{url('/home', $key)}}" class="kt-widget__title">
-                                                                        {{$project['project']->name}}
-                                                                    </a>
-                                                                    <span class="kt-widget__desc">
-                                                                    Creates by {{$project['project']->lead['displayName']}}
-                                                                </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="kt-portlet__head-toolbar">
-                                                                @if($project['rate'] == null)
-                                                                    <a id="{{$key}}" href="#" class="btn btn-clean
-                                                                    btn-sm
-                                                                    btn-icon
-                                                                     btn-icon-md">
-                                                                        <i class="flaticon2-plus"></i>
-                                                                    </a>
-                                                                @else
-
-                                                                    <a href="#" class="btn btn-clean btn-sm btn-icon btn-icon-md">
-                                                                        <i class="flaticon2-settings"></i>
-                                                                    </a>
-                                                                    <button type="button" class="btn btn-bold btn-label-brand btn-sm" data-toggle="modal" data-target="#kt_modal_5">Launch Modal</button>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                        <div class="kt-widget__body">
-                                                            <div class="kt-widget__stats">
-                                                                <div class="kt-widget__item">
-                                                                <span class="kt-widget__date">
-                                                                    Start Date
-                                                                </span>
-                                                                    <div class="kt-widget__label">
-                                                                        <span class="btn btn-label-brand btn-sm btn-bold btn-upper">07 may, 18</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="kt-widget__item">
-                                                                <span class="kt-widget__date">
-                                                                    Due Date
-                                                                </span>
-                                                                    <div class="kt-widget__label">
-                                                                        <span class="btn btn-label-danger btn-sm btn-bold btn-upper">07 0ct, 18</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="kt-widget__item flex-fill">
-                                                                    <span class="kt-widget__subtitel">Progress</span>
-                                                                    <div class="kt-widget__progress d-flex  align-items-center">
-                                                                        <div class="progress" style="height: 5px;width: 100%;">
-                                                                            <div class="progress-bar kt-bg-warning" role="progressbar" style="width: 78%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                        </div>
-                                                                        <span class="kt-widget__stat">
-                                                                        78%
-                                                                    </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <span class="kt-widget__text">
-                                                            I distinguish three main text objecttives.First, your objective could
-                                                            be merely to inform people.A second be to persuade people.
+                                            <!--begin::Widget -->
+                                            <div class="kt-widget kt-widget--project-1">
+                                                <div class="kt-widget__head">
+                                                    <div class="kt-widget__label">
+                                                        <div class="kt-widget__media">
+                                                        <span class="kt-media kt-media--lg kt-media--circle">
+                                                            <img
+                                                                    src="{{$project['project']->avatarUrls["48x48"]}}"
+                                                                 alt="image">
                                                         </span>
-                                                            <div class="kt-widget__content">
-                                                                <div class="kt-widget__details">
-                                                                    <span class="kt-widget__subtitle">Budget</span>
-                                                                    <span class="kt-widget__value"><span>$</span>249,500</span>
-                                                                </div>
-                                                                <div class="kt-widget__details">
-                                                                    <span class="kt-widget__subtitle">Ставка</span>
-                                                                    @if($project['rate'] == null)
-                                                                        <span class="kt-widget__value"><span></span>не
-                                                                            установленна
-                                                                        </span>
-                                                                    @else
-                                                                        <span class="kt-widget__value"><span><i class="fa fa-ruble-sign"></i></span>{{$project['rate']}}</span>
-                                                                    @endif
+                                                        </div>
+                                                        <div class="kt-widget__info kt-margin-t-5">
+                                                            <a href="{{url('/home', $key)}}" class="kt-widget__title">
+                                                                {{$project['project']->name}}
+                                                            </a>
+                                                            <span class="kt-widget__desc">
+                                                            Creates by {{$project['project']->lead['displayName']}}
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kt-portlet__head-toolbar">
+                                                        @if($project['rate'] == null)
+                                                            <a id="{{$key}}" href="#" class="btn btn-clean
+                                                            btn-sm
+                                                            btn-icon
+                                                             btn-icon-md" data-toggle="modal" data-target="#kt_modal_5">
+                                                                <i class="flaticon2-plus"></i>
+                                                            </a>
+                                                            <a  href="#" class="btn btn-clean btn-sm btn-icon
+                                                            btn-icon-md" style="display: none">
+                                                                <i class="flaticon2-settings"></i>
+                                                            </a>
+                                                        @else
+                                                            <a id="{{$key}}" href="#" class="btn btn-clean
+                                                            btn-sm
+                                                            btn-icon
+                                                             btn-icon-md" data-toggle="modal"
+                                                               data-target="#kt_modal_5" style="display: none">
+                                                                <i class="flaticon2-plus"></i>
+                                                            </a>
+                                                            <a  href="#" class="btn btn-clean btn-sm btn-icon
+                                                            btn-icon-md">
+                                                                <i class="flaticon2-settings"></i>
+                                                            </a>
 
-                                                                </div>
-                                                                <div class="kt-widget__details">
-                                                                    <span class="kt-widget__subtitle">Members</span>
-                                                                    <div class="kt-media-group">
-                                                                        @foreach($project['users'] as  $user)
-                                                                            <a href="#" class="kt-media kt-media--sm
-                                                                            kt-media--circle"
-                                                                               data-toggle="kt-tooltip"
-                                                                               data-skin="brand" data-placement="top"
-                                                                               title=""
-                                                                               data-original-title="{{$user->displayName}}">
-                                                                                <img
-                                                                                        src="{{ app\Project::convert($user->avatarUrls) }}"
-                                                                                     alt="image">
-                                                                            </a>
-                                                                        @endforeach
-                                                                    </div>
-                                                                </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="kt-widget__body">
+                                                    <div class="kt-widget__stats">
+                                                        <div class="kt-widget__item">
+                                                        <span class="kt-widget__date">
+                                                            Start Date
+                                                        </span>
+                                                            <div class="kt-widget__label">
+                                                                <span class="btn btn-label-brand btn-sm btn-bold btn-upper">07 may, 18</span>
                                                             </div>
                                                         </div>
-                                                        <div class="kt-widget__footer">
-                                                            <div class="kt-widget__wrapper">
-                                                                <div class="kt-widget__section">
-                                                                    <div class="kt-widget__blog">
-                                                                        <i class="flaticon2-list-1"></i>
-                                                                        <a href="#" class="kt-widget__value kt-font-brand">72 Tasks</a>
-                                                                    </div>
-                                                                    <div class="kt-widget__blog">
-                                                                        <i class="flaticon2-talk"></i>
-                                                                        <a href="#" class="kt-widget__value kt-font-brand">648 Comments</a>
-                                                                    </div>
+                                                        <div class="kt-widget__item">
+                                                        <span class="kt-widget__date">
+                                                            Due Date
+                                                        </span>
+                                                            <div class="kt-widget__label">
+                                                                <span class="btn btn-label-danger btn-sm btn-bold btn-upper">07 0ct, 18</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="kt-widget__item flex-fill">
+                                                            <span class="kt-widget__subtitel">Progress</span>
+                                                            <div class="kt-widget__progress d-flex  align-items-center">
+                                                                <div class="progress" style="height: 5px;width: 100%;">
+                                                                    <div class="progress-bar kt-bg-warning" role="progressbar" style="width: 78%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                                 </div>
-                                                                <div class="kt-widget__section">
-                                                                    <a  href="{{url('/home', $key)}}"
-                                                                       class="btn btn-brand btn-sm
-                                                                    btn-upper btn-bold">details</a>
-
-                                                                </div>
+                                                                <span class="kt-widget__stat">
+                                                                78%
+                                                            </span>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <span class="kt-widget__text">
+                                                    I distinguish three main text objecttives.First, your objective could
+                                                    be merely to inform people.A second be to persuade people.
+                                                </span>
+                                                    <div class="kt-widget__content">
+                                                        <div class="kt-widget__details">
+                                                            <span class="kt-widget__subtitle">Budget</span>
+                                                            <span class="kt-widget__value"><span>$</span>249,500</span>
+                                                        </div>
+                                                        <div class="kt-widget__details">
+                                                            <span class="kt-widget__subtitle">Ставка</span>
+                                                            @if($project['rate'] == null)
+                                                                <span class="kt-widget__value"><span><i class="fa
+                                                                fa-ruble-sign"
+                                                                                                        id="rate-value">--------</i></span></span>
+                                                            @else
+                                                                <span class="kt-widget__value"><span><i class="fa
+                                                                fa-ruble-sign"
+                                                                                                        id="rate-value">{{$project['rate']}}</i></span></span>
+                                                            @endif
 
-                                                    <!--end::Widget -->
+                                                        </div>
+                                                        <div class="kt-widget__details">
+                                                            <span class="kt-widget__subtitle">Members</span>
+                                                            <div class="kt-media-group">
+                                                                @foreach($project['users'] as  $user)
+                                                                    <a href="#" class="kt-media kt-media--sm
+                                                                    kt-media--circle"
+                                                                       data-toggle="kt-tooltip"
+                                                                       data-skin="brand" data-placement="top"
+                                                                       title=""
+                                                                       data-original-title="{{$user->displayName}}">
+                                                                        <img
+                                                                                src="{{ app\Project::convert($user->avatarUrls) }}"
+                                                                             alt="image">
+                                                                    </a>
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="kt-widget__footer">
+                                                    <div class="kt-widget__wrapper">
+                                                        <div class="kt-widget__section">
+                                                            <div class="kt-widget__blog">
+                                                                <i class="flaticon2-list-1"></i>
+                                                                <a href="#" class="kt-widget__value kt-font-brand">72 Tasks</a>
+                                                            </div>
+                                                            <div class="kt-widget__blog">
+                                                                <i class="flaticon2-talk"></i>
+                                                                <a href="#" class="kt-widget__value kt-font-brand">648 Comments</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="kt-widget__section">
+                                                            <a  href="{{url('/home', $key)}}"
+                                                               class="btn btn-brand btn-sm
+                                                            btn-upper btn-bold">details</a>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <!--end:: Portlet-->
+                                            <!--end::Widget -->
                                         </div>
+                                    </div>
+
+                                    <!--end:: Portlet-->
+                                </div>
                              @endforeach
                         <!--Begin::Section-->
                         </div>
@@ -434,5 +446,6 @@
     </div>
 
     <!-- end:: Page -->
+
     </body>
 @endsection

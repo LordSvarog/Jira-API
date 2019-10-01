@@ -31,6 +31,7 @@ class HomeController extends Controller
 
     public static function showProject()
 	{
+		$oProject = new Project();
 
 		return view('project');
 

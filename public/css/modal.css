@@ -1,0 +1,11 @@
+#kt_modal_5{
+	background: rgba(26, 26, 24, 0.6);
+    opacity: 1;
+}
+
+#kt_modal_5 > .modal-sm{
+
+top: 100px;
+
+}
+

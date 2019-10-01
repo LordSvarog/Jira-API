@@ -11,8 +11,34 @@ use JiraRestApi\Configuration\ArrayConfiguration;
 use JiraRestApi\User\UserService;
 class Project extends Model
 {
-
 	protected $id, $key, $name, $rate;
+	protected $fillable = ['key', 'name', 'rate'];
+
+
+	/**
+	 * @param mixed $key
+	 */
+	public function setKey($key)
+	{
+		$this->key = $key;
+	}
+
+	/**
+	 * @param mixed $name
+	 */
+	public function setName($name){
+		$this->name = $name;
+	}
+
+	/**
+	 * @param mixed $rate
+	 */
+	public function setRate($rate)
+	{
+		$this->rate = $rate;
+	}
+
+
 
 
 	private static function apiProject() {
