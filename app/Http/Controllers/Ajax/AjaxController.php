@@ -21,6 +21,13 @@ class AjaxController extends ResponseController
 	|
 	*/
 
+	/**
+	 * update Or new Create Project in DB
+	 *
+	 * @param Request $request
+	 * @return \Illuminate\Http\JsonResponse
+	 */
+
 	public function setRate(Request $request)
 
 	{
@@ -28,7 +35,7 @@ class AjaxController extends ResponseController
 		$oProject = new Project($param);
 
 
-		if ($oProject ->save()){
+		if ($oProject ->updateOrCreate(['key' =>$param['key']],$param)){
 			$arResult["status"] = true;
 		}else{
 			$arResult["status"] = false;

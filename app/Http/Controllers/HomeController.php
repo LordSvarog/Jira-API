@@ -22,7 +22,6 @@ class HomeController extends Controller
      */
     public static function index()
     {
-    	//var_dump(Project::getAllInfo());die();
         return view('home',[
 			'data' => Project::instance()->getAllInfo(),
 		]);
@@ -31,8 +30,6 @@ class HomeController extends Controller
 
     public static function showProject()
 	{
-		$oProject = new Project();
-
 		return view('project');
 
 	}

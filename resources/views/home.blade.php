@@ -313,8 +313,8 @@
                                                              btn-icon-md" data-toggle="modal" data-target="#kt_modal_5">
                                                                 <i class="flaticon2-plus"></i>
                                                             </a>
-                                                            <a  href="#" class="btn btn-clean btn-sm btn-icon
-                                                            btn-icon-md" style="display: none">
+                                                            <a id="{{$key}}" href="#" class="btn btn-clean btn-sm btn-icon
+                                                            btn-icon-md" style="display: none" data-toggle="modal" data-target="#kt_modal_5">
                                                                 <i class="flaticon2-settings"></i>
                                                             </a>
                                                         @else
@@ -325,8 +325,8 @@
                                                                data-target="#kt_modal_5" style="display: none">
                                                                 <i class="flaticon2-plus"></i>
                                                             </a>
-                                                            <a  href="#" class="btn btn-clean btn-sm btn-icon
-                                                            btn-icon-md">
+                                                            <a id="{{$key}}" href="#" class="btn btn-clean btn-sm btn-icon
+                                                            btn-icon-md" data-toggle="modal" data-target="#kt_modal_5">
                                                                 <i class="flaticon2-settings"></i>
                                                             </a>
 

@@ -1,12 +1,16 @@
 $(document).ready(function(){
-
+	/**
+	 * токен для AJAX
+	 */
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		}
 	});
 
-
+	/**
+	 * Отслеживание изменений ставки
+	 */
 	$('.btn-icon-md').off().on('click', function () {
 			var name = $(this).closest(".col-xl-6").attr("id");
 			var key = $(this).attr('id');
@@ -48,10 +52,16 @@ $(document).ready(function(){
 
 
 
-
 });
 
 
+/**
+ * метод Ajax формы
+ * @param url
+ * @param data
+ * @param success
+ * @param error
+ */
 function sendAjaxForm(url, data, success, error) {
 	jQuery.ajax({
 		url:     url, //url страницы (action_ajax_form.php)

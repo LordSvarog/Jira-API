@@ -39,14 +39,20 @@ class Project extends Model
 	}
 
 
-
-
+	/**
+	 * @return ProjectService - для работы с API
+	 */
 	private static function apiProject() {
 		return new  ProjectService();
 	}
+
+	/**
+	 * @return UserService для работы с API
+	 */
 	private static function apiUser() {
 		return new  UserService();
 	}
+
 	public static function getByKey($key)
 	{
 		$project = self::apiProject()->get($key);
@@ -94,10 +100,7 @@ class Project extends Model
 				'rate' => self::getParams($project->key, 'rate')
 
 			];
-//			$newProject = self::instance();
-//			$newProject->key = '';
-//			$newProject->save();
-			//dd(self::getParams($project->key, 'rate'));
+
 		}
 		return $arrProjects;
 	}

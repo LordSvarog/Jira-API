@@ -22,3 +22,4 @@ Route::get('/home/{key}', 'HomeController@showProject');
 Route::get('/developers/', 'DevelopersController@index');
 Route::get('/developer/{name}', 'DevelopersController@issue')->where('name', '[A-Za-z._]+');
 Route::post('/setrate', 'Ajax\AjaxController@setRate');
+
