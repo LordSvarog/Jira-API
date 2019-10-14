@@ -23,3 +23,5 @@ Route::get('/developers/', 'DevelopersController@index');
 Route::get('/developer/{name}', 'DevelopersController@issue')->where('name', '[A-Za-z._]+');
 Route::post('/setrate', 'Ajax\AjaxController@setRate');
 
+Route::post('/getrate', 'Ajax\AjaxDevelopersController@getRate');
+Route::post('/saveparams', 'Ajax\AjaxDevelopersController@saveParams');

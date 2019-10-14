@@ -69,6 +69,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--begin:: Vendor Plugins for custom pages -->
+
 	<link href="{{ asset('assets/plugins/custom/plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('assets/plugins/custom/@fullcalendar/core/main.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('assets/plugins/custom/@fullcalendar/daygrid/main.css') }}" rel="stylesheet" type="text/css" />
@@ -148,6 +149,24 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--end::Global Theme Bundle -->
 
 <!--begin::Page Scripts(used by this page) -->
+<script src="{{ asset('assets/plugins/general/jquery/dist/jquery.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/general/jquery-validation/dist/jquery.validate.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/general/jquery-form/dist/jquery.form.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/js/scripts.bundle.js') }}" type="text/javascript"></script>
+
+
+<script src="{{ asset('assets/plugins/general/sticky-js/dist/sticky.min.js') }}" type="text/javascript"></script>
+
+
+
+<script src="{{ asset('assets/plugins/general/js/global/integration/plugins/jquery-validation.init.js') }}" type="text/javascript"></script>
+
+
+
+
+
+
+
 <script src="{{ asset('assets/js/pages/custom/login/login-general.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <!--end::Page Scripts -->

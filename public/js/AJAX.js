@@ -39,7 +39,7 @@ $(document).ready(function(){
 						alert("Ставка не сохранилась")
 					}
 
-					});
+				});
 
 			});
 
@@ -67,7 +67,7 @@ function sendAjaxForm(url, data, success, error) {
 		url:     url, //url страницы (action_ajax_form.php)
 		type:     "POST", //метод отправки
 		dataType: "html", //формат данных
-		data: data,  // Сеарилизуем объект
+		data: data,  // Сериализуем объект
 		success: function(response) {
 			var data = response ? JSON.parse(response) : null
 			success && success(data);

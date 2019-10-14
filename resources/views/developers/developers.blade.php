@@ -1,4 +1,3 @@
-
 @extends('layouts.header')
 @section('content')
 	<body class="kt-app__aside--left kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
@@ -263,28 +262,50 @@
 											</h3>
 										</div>
 									</div>
+                                    <!--begin: Datatable -->
+                                    <div class="kt-datatable" id="kt_apps_user_list_datatable"></div>
+
+                                    <!--end: Datatable -->
 									<div class="kt-portlet__body">
 										<div class="kt-section">
 											<div class="kt-section__content">
 												<table class="table">
 													<thead>
 													<tr>
-														<th>name</th>
-														<th>Разработик</th>
-														<th>Должность</th>
+														<th>Разработчик</th>
+														<th>Код</th>
 														<th>Ставка</th>
+                                                        <th>Объём часов</th>
+                                                        <th>Действие</th>
 													</tr>
 													</thead>
 													<tbody>
-													@foreach($developers as $key => $developer)
-														@if($developer->accountType == 'atlassian')
-															<tr>
-																<td><?=$developer->name?></td>
-																<td><b><?=$developer->displayName?></b></td>
-																<td>Программист</td>
-																<td>1500 р/ч</td>
-															</tr>
-														@endif
+													@foreach ($developers as $key => $developer)
+                                                        <tr id="{{$developer['code']}}">
+                                                            <td class="developer-info">
+                                                                <div class="kt-user-card-v2">
+                                                                    <div class="kt-user-card-v2__pic">
+                                                                        <img alt="photo" src="{{$developer['avatar']}}">
+                                                                    </div>
+                                                                    <div class="kt-user-card-v2__details">
+                                                                        <a class="kt-user-card-v2__name" href="/developer/{{$developer['code']}}" data-id="{{ isset($developer['id']) ? $developer['id'] : '' }}">{{$developer['name']}}</a>
+                                                                        @if (isset($developer['id']))
+																			<span class="kt-user-card-v2__desc" data-id="{{$developer['position_id']}}">
+                                                                            {{$developer['title']}}
+                                                                        </span>
+																		@endif
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="developer-code"><b>{{$developer['code']}}</b></td>
+                                                            <td class="developer-rate">{{isset($developer['rate']) ? $developer['rate'] : ''}} р/ч</td>
+                                                            <td class="developer-hours">{{isset($developer['hours']) ? $developer['hours'] : ''}} ч/мес.</td>
+                                                            <td class="developer-action">
+                                                                <button type="button" class="btn btn-circle btn-icon" data-toggle="modal" data-target="#kt_modal_6">
+                                                                    <i></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
 													@endforeach
 													</tbody>
 												</table>
@@ -305,7 +326,50 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- Modal -->
+	<div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalLabel"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="developer-settings">
+						<input type="hidden" class="form-control" id="dev-id" name="dev-id">
+						<input type="hidden" class="form-control" id="dev-code" name="dev-code">
+						<div class="form-group">
+							<label for="name" class="col-form-label">Сотрудник:</label>
+							<input type="text" class="form-control" id="name" name="name" required>
+						</div>
+                        <div class="form-group">
+                            <label for="title" class="col-form-label">Должность:</label>
+                            <select id="title" class="custom-select form-control" style="width: 100%" name="title" required>
+								<option selected="selected" value="">Нажмите сюда и выберите должность</option>
+								<? foreach ($posList as $pos): ?>
+                                    <option value="<?=$pos->id; ?>"><?=$pos->title; ?></option>
+                                <? endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rate" class="col-form-label">Ставка:</label>
+                            <input type="text" class="form-control" id="rate" disabled="disabled" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hours" class="col-form-label">Объём часов:</label>
+                            <input type="text" class="form-control" id="hours" disabled="disabled" required>
+                        </div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+					<button type="button" class="btn btn-primary save-data">Сохранить</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- end:: Page -->
 	</body>
 @endsection

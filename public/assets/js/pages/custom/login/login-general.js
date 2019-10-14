@@ -1,7 +1,7 @@
 "use strict";
 
 // Class Definition
-var KTLoginGeneral = function() {
+var KTLoginGeneral = (function($) {
 
     var login = $('#kt_login');
 
@@ -100,8 +100,12 @@ var KTLoginGeneral = function() {
                 	// similate 2s delay
                 	setTimeout(function() {
 	                    btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
-	                    showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
-                    }, 2000);
+                        location.href = "/home/";
+                    }, 300);
+                },
+                error: function(response, status, xhr, $form) {
+                    showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
+                    btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
                 }
             });
         });
@@ -217,7 +221,7 @@ var KTLoginGeneral = function() {
             handleForgotFormSubmit();
         }
     };
-}();
+})(jQuery);
 
 // Class Initialization
 jQuery(document).ready(function() {

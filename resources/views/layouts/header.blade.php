@@ -88,7 +88,6 @@
 	<link href="{{ asset('assets/css/skins/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('assets/css/skins/brand/dark.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('assets/css/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
 
 	<!--end::Layout Skins -->
 	<link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
@@ -265,5 +264,6 @@
 	<!--begin::Page Scripts(used by this page) -->
 	<script src="{{ asset('assets/js/pages/dashboard.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('js/AJAX.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
 </footer>
 </html>
